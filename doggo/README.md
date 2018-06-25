@@ -1,6 +1,6 @@
 # README
 
-# dog-go Documentation
+# dog-go API Documentation
 
 Version 1
 Date: 6/25/18
