@@ -1,0 +1,335 @@
+  [1m[35m (659.9ms)[0m  [1m[35mCREATE DATABASE "doggo_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (491.0ms)[0m  [1m[35mCREATE DATABASE "doggo_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (43.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (29.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4503895740962357565)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateQuestions (20180625174855)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (62.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "content" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180625174855_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (7.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180625174855"]]
+  ↳ bin/rails:9
+  [1m[35m (17.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAnswers (20180625174935)
+  [1m[35m (12.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(4503895740962357565)[0m
+  ↳ bin/rails:9
+  [1m[35m (32.9ms)[0m  [1m[35mCREATE DATABASE "doggo_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "doggo_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4503895740962357565)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAnswers (20180625174935)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (26.1ms)[0m  [1m[35mCREATE TABLE "answers" ("id" bigserial primary key, "value" boolean, "question_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180625174935_create_answers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180625174935"]]
+  ↳ bin/rails:9
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (17.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-25 17:52:33.721420"], ["updated_at", "2018-06-25 17:52:33.721420"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4503895740962357565)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/bin/annotate:23
+Started GET "/rails/info" for 127.0.0.1 at 2018-06-25 13:58:10 -0400
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#index as HTML
+Redirected to http://localhost:3000/rails/info/routes
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-06-25 13:58:10 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (19.4ms)
+  Rendered /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.5ms)
+  Rendered /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 82ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mQuestion Create (13.0ms)[0m  [1m[32mINSERT INTO "questions" ("id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 1], ["content", "What's up doc?"], ["created_at", "2018-06-25 18:10:31.825905"], ["updated_at", "2018-06-25 18:10:31.825905"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "questions" ("id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 2], ["content", "What's goin on?"], ["created_at", "2018-06-25 18:10:31.844695"], ["updated_at", "2018-06-25 18:10:31.844695"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mQuestion Create (2.3ms)[0m  [1m[32mINSERT INTO "questions" ("id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 3], ["content", "How's the weather?"], ["created_at", "2018-06-25 18:10:31.849874"], ["updated_at", "2018-06-25 18:10:31.849874"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mQuestion Load (7.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (25.8ms)[0m  [1m[32mINSERT INTO "answers" ("value", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["value", true], ["question_id", 1], ["created_at", "2018-06-25 18:10:31.921755"], ["updated_at", "2018-06-25 18:10:31.921755"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("value", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["value", false], ["question_id", 2], ["created_at", "2018-06-25 18:10:31.955173"], ["updated_at", "2018-06-25 18:10:31.955173"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["question_id", 3], ["created_at", "2018-06-25 18:10:31.962406"], ["updated_at", "2018-06-25 18:10:31.962406"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/questions" for 127.0.0.1 at 2018-06-25 14:11:51 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by QuestionsController#index as */*
+  Rendering questions/index.json.jbuilder
+  Rendered questions/index.json.jbuilder (0.7ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:1: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...ial: 'questions/question', as :question
+...                              ^):
+  
+app/views/questions/index.json.jbuilder:1: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+Started GET "/questions" for 127.0.0.1 at 2018-06-25 14:12:23 -0400
+Processing by QuestionsController#index as */*
+  Rendering questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.json.jbuilder:1
+  Rendered questions/index.json.jbuilder (28.8ms)
+Completed 200 OK in 100ms (Views: 56.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2018-06-25 14:12:36 -0400
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for QuestionsController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/questions/1" for 127.0.0.1 at 2018-06-25 14:15:20 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8
+  Rendering questions/show.json.jbuilder
+  Rendered questions/show.json.jbuilder (35.6ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `answer' for #<Question:0x00007ff95495b780>
+Did you mean?  answers
+               answers=):
+    3:   json.attributes do
+    4:     json.id @question.id
+    5:     json.content @question.content
+    6:     json.answer @question.answer
+    7:   end
+    8: end
+  
+app/views/questions/show.json.jbuilder:6:in `block (2 levels) in _app_views_questions_show_json_jbuilder__3448177232942158279_70354421337540'
+app/views/questions/show.json.jbuilder:3:in `block in _app_views_questions_show_json_jbuilder__3448177232942158279_70354421337540'
+app/views/questions/show.json.jbuilder:1:in `_app_views_questions_show_json_jbuilder__3448177232942158279_70354421337540'
+Started GET "/questions/1" for 127.0.0.1 at 2018-06-25 14:15:45 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8
+  Rendering questions/show.json.jbuilder
+  Rendered questions/show.json.jbuilder (0.9ms)
+Completed 200 OK in 90ms (Views: 35.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2018-06-25 14:16:26 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8
+  Rendering questions/show.json.jbuilder
+  Rendered questions/show.json.jbuilder (0.5ms)
+Completed 200 OK in 66ms (Views: 30.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2018-06-25 14:16:49 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8
+  Rendering questions/show.json.jbuilder
+  Rendered questions/show.json.jbuilder (0.4ms)
+Completed 200 OK in 68ms (Views: 31.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/answers/1" for 127.0.0.1 at 2018-06-25 14:19:47 -0400
+Processing by AnswersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:3
+  Rendering answers/show.json.jbuilder
+  Rendered answers/show.json.jbuilder (0.6ms)
+Completed 200 OK in 81ms (Views: 32.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2018-06-25 14:21:00 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8
+  Rendering questions/show.json.jbuilder
+  Rendered questions/show.json.jbuilder (35.2ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `answer' for #<Question:0x00007ff95693a128>
+Did you mean?  answers
+               answers=):
+    1: json.question do
+    2:   json.id @question.id
+    3:   json.content @question.content
+    4:   json.answer @question.answer
+    5: end
+  
+app/views/questions/show.json.jbuilder:4:in `block in _app_views_questions_show_json_jbuilder__3448177232942158279_70354408348720'
+app/views/questions/show.json.jbuilder:1:in `_app_views_questions_show_json_jbuilder__3448177232942158279_70354408348720'
+Started GET "/questions/1" for 127.0.0.1 at 2018-06-25 14:21:16 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8
+  Rendering questions/show.json.jbuilder
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  ↳ app/views/questions/show.json.jbuilder:7
+  Rendered questions/show.json.jbuilder (38.5ms)
+Completed 200 OK in 118ms (Views: 83.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2018-06-25 14:22:43 -0400
+Processing by QuestionsController#index as */*
+  Rendering questions/index.json.jbuilder
+  Rendered questions/index.json.jbuilder (29.4ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.questions do
+    2:   json.id @question.id
+    3:   json.content @question.content
+    4:   json.answer @question.answers
+    5: end
+  
+app/views/questions/index.json.jbuilder:2:in `block in _app_views_questions_index_json_jbuilder__2556502431815175969_70354406719280'
+app/views/questions/index.json.jbuilder:1:in `_app_views_questions_index_json_jbuilder__2556502431815175969_70354406719280'
+Started GET "/questions" for 127.0.0.1 at 2018-06-25 14:23:30 -0400
+Processing by QuestionsController#index as */*
+  Rendering questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.json.jbuilder:1
+  Rendered questions/index.json.jbuilder (31.9ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    1: json.array! @questions
+    2: json.questions do
+    3:   json.id @question.id
+    4:   json.content @question.content
+    5:   json.answer @question.answers
+  
+app/views/questions/index.json.jbuilder:2:in `_app_views_questions_index_json_jbuilder__2556502431815175969_70354414971580'
+Started GET "/questions" for 127.0.0.1 at 2018-06-25 14:24:31 -0400
+Processing by QuestionsController#index as */*
+  Rendering questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.json.jbuilder:1
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  ↳ app/views/questions/index.json.jbuilder:6
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 2]]
+  ↳ app/views/questions/index.json.jbuilder:6
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 3]]
+  ↳ app/views/questions/index.json.jbuilder:6
+  Rendered questions/index.json.jbuilder (6.3ms)
+Completed 200 OK in 66ms (Views: 34.6ms | ActiveRecord: 1.2ms)
+
+
