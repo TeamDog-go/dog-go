@@ -1,24 +1,100 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# dog-go Documentation
 
-Things you may want to cover:
+Version 1
+Date: 6/25/18
+Authors: cdmackeyfree / ppreyer
 
-* Ruby version
+## **1. Get all Questions**
+**Request**
+GET https://polar-castle-14061.herokuapp.com/questions.json/questions.json
 
-* System dependencies
+**Response**
+200 = Response will be an object/ array containing a list of question objects. Questions structure: 
+```JSON
 
-* Configuration
+{
+  "questions": [
+    {
+      "id": 1,
+      "content": "What's up doc?",
+      "answer": [
+        {
+          "id": 1,
+          "value": true,
+          "question_id": 1,
+          "created_at": "2018-06-25T18:41:45.801Z",
+          "updated_at": "2018-06-25T18:41:45.801Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "content": "What's goin on?",
+      "answer": [
+        {
+          "id": 2,
+          "value": false,
+          "question_id": 2,
+          "created_at": "2018-06-25T18:41:45.810Z",
+          "updated_at": "2018-06-25T18:41:45.810Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "content": "How's the weather?",
+      "answer": [
+        {
+          "id": 3,
+          "value": null,
+          "question_id": 3,
+          "created_at": "2018-06-25T18:41:45.820Z",
+          "updated_at": "2018-06-25T18:41:45.820Z"
+        }
+      ]
+    }
+  ]
+}
+```
 
-* Database creation
+## **2. Get one Question**
+**Request**
+GET https://polar-castle-14061.herokuapp.com/questions/(:id)
 
-* Database initialization
+**Response**
+200 = Response includes question object, including an array of its associated answers:
+``` JSON
+{
+  "question": {
+    "id": 1,
+    "content": "What's up doc?",
+    "answer": [
+      {
+        "id": 1,
+        "value": true,
+        "question_id": 1,
+        "created_at": "2018-06-25T18:41:45.801Z",
+        "updated_at": "2018-06-25T18:41:45.801Z"
+      }
+    ]
+  }
+}
 
-* How to run the test suite
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## **3. Get one Answer**
+**Request:**
+https://polar-castle-14061.herokuapp.com/answers/(:id)
 
-* Deployment instructions
-
-* ...
+**Response:**
+```JSON
+{
+  "answer": {
+    "id": 1,
+    "value": true,
+    "question_id": 1
+  }
+}
+```
