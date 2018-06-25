@@ -333,3 +333,249 @@ Processing by QuestionsController#index as */*
 Completed 200 OK in 66ms (Views: 34.6ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/rails/info" for 127.0.0.1 at 2018-06-25 14:54:43 -0400
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#index as HTML
+Redirected to http://localhost:3000/rails/info/routes
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-06-25 14:54:44 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (6.1ms)
+  Rendered /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionpack-5.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.3ms)
+  Rendered /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/info/routes.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 68ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2018-06-25 15:06:03 -0400
+Processing by QuestionsController#create as */*
+  Parameters: {"content"=>"\"What is your name?\""}
+Completed 400 Bad Request in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: question):
+  
+app/controllers/questions_controller.rb:25:in `question_params'
+app/controllers/questions_controller.rb:12:in `create'
+Started POST "/questions" for 127.0.0.1 at 2018-06-25 15:06:45 -0400
+Processing by QuestionsController#create as */*
+  Parameters: {"content"=>"\"What is your name?\""}
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 7.0ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<QuestionsController:0x00007f83aa146b28>
+Did you mean?  respond_to?):
+  
+app/controllers/questions_controller.rb:13:in `create'
+Started POST "/questions" for 127.0.0.1 at 2018-06-25 15:08:11 -0400
+Processing by QuestionsController#create as */*
+  Parameters: {"content"=>"\"What is your name?\""}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[36mQuestion Create (9.6ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "\"What is your name?\""], ["created_at", "2018-06-25 19:08:11.607119"], ["updated_at", "2018-06-25 19:08:11.607119"]]
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/questions_controller.rb:13
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 18.2ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "questions_pkey"
+DETAIL:  Key (id)=(1) already exists.
+: INSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"):
+  
+app/controllers/questions_controller.rb:13:in `create'
+Started POST "/questions" for 127.0.0.1 at 2018-06-25 15:09:04 -0400
+Processing by QuestionsController#create as */*
+  Parameters: {"content"=>"\"What is your name?\"", "id"=>"4"}
+Unpermitted parameter: :id
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[36mQuestion Create (1.5ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "\"What is your name?\""], ["created_at", "2018-06-25 19:09:04.502772"], ["updated_at", "2018-06-25 19:09:04.502772"]]
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/questions_controller.rb:13
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 6.5ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "questions_pkey"
+DETAIL:  Key (id)=(2) already exists.
+: INSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"):
+  
+app/controllers/questions_controller.rb:13:in `create'
+Started POST "/questions" for 127.0.0.1 at 2018-06-25 15:12:07 -0400
+Processing by QuestionsController#create as */*
+  Parameters: {"content"=>"\"What is your name?\""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[36mQuestion Create (8.0ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "\"What is your name?\""], ["created_at", "2018-06-25 19:12:07.294933"], ["updated_at", "2018-06-25 19:12:07.294933"]]
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/questions_controller.rb:13
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 8.3ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "questions_pkey"
+DETAIL:  Key (id)=(3) already exists.
+: INSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"):
+  
+app/controllers/questions_controller.rb:13:in `create'
+Started POST "/questions" for 127.0.0.1 at 2018-06-25 15:12:22 -0400
+Processing by QuestionsController#create as */*
+  Parameters: {"content"=>"\"What is your name?\""}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[36mQuestion Create (1.0ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "\"What is your name?\""], ["created_at", "2018-06-25 19:12:22.308329"], ["updated_at", "2018-06-25 19:12:22.308329"]]
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/questions_controller.rb:13
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<QuestionsController:0x00007f83a9b301f8>
+Did you mean?  respond_to?):
+  
+app/controllers/questions_controller.rb:14:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.7ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "What is your favorite color?"], ["created_at", "2018-06-25 19:16:41.042564"], ["updated_at", "2018-06-25 19:16:41.042564"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/questions" for 127.0.0.1 at 2018-06-25 15:18:03 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by QuestionsController#create as */*
+  Parameters: {"content"=>"\"What is your name?\""}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[36mQuestion Create (1.1ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "\"What is your name?\""], ["created_at", "2018-06-25 19:18:59.742681"], ["updated_at", "2018-06-25 19:18:59.742681"]]
+  ↳ (byebug):1
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1
+Completed 500 Internal Server Error in 131053ms (ActiveRecord: 15.3ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/questions_controller.rb:13:in `create'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mQuestion Create (0.8ms)[0m  [1m[32mINSERT INTO "questions" ("id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 1], ["content", "What's up doc?"], ["created_at", "2018-06-25 19:21:32.785269"], ["updated_at", "2018-06-25 19:21:32.785269"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "questions" ("id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 2], ["content", "What's goin on?"], ["created_at", "2018-06-25 19:21:32.795334"], ["updated_at", "2018-06-25 19:21:32.795334"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 3], ["content", "How's the weather?"], ["created_at", "2018-06-25 19:21:32.800802"], ["updated_at", "2018-06-25 19:21:32.800802"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("value", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["value", true], ["question_id", 1], ["created_at", "2018-06-25 19:21:32.857108"], ["updated_at", "2018-06-25 19:21:32.857108"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("value", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["value", false], ["question_id", 2], ["created_at", "2018-06-25 19:21:32.868084"], ["updated_at", "2018-06-25 19:21:32.868084"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.7ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["question_id", 3], ["created_at", "2018-06-25 19:21:32.879152"], ["updated_at", "2018-06-25 19:21:32.879152"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+Started POST "/questions" for 127.0.0.1 at 2018-06-25 15:21:47 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by QuestionsController#create as */*
+  Parameters: {"content"=>"\"What is your name?\""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[36mQuestion Create (0.7ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "\"What is your name?\""], ["created_at", "2018-06-25 19:21:48.011936"], ["updated_at", "2018-06-25 19:21:48.011936"]]
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/questions_controller.rb:13
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 11.6ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<QuestionsController:0x00007fed0bf6a7c0>
+Did you mean?  respond_to?):
+  
+app/controllers/questions_controller.rb:14:in `create'
+Started POST "/questions" for 127.0.0.1 at 2018-06-25 15:24:55 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by QuestionsController#create as */*
+  Parameters: {"content"=>"\"What is your name?\""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[36mQuestion Create (0.7ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "\"What is your name?\""], ["created_at", "2018-06-25 19:24:56.898758"], ["updated_at", "2018-06-25 19:24:56.898758"]]
+  ↳ app/controllers/questions_controller.rb:13
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/questions_controller.rb:13
+  Rendering questions/show.json.jbuilder
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 8]]
+  ↳ app/views/questions/show.json.jbuilder:7
+  Rendered questions/show.json.jbuilder (52.2ms)
+Completed 201 Created in 100ms (Views: 62.1ms | ActiveRecord: 15.7ms)
+
+
+Started POST "/answers" for 127.0.0.1 at 2018-06-25 15:27:29 -0400
+Processing by AnswersController#create as */*
+  Parameters: {"value"=>"true", "question_id"=>"8"}
+Completed 404 Not Found in 34ms (ActiveRecord: 15.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  
+app/controllers/answers_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/answers" for 127.0.0.1 at 2018-06-25 15:29:01 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AnswersController#create as */*
+  Parameters: {"value"=>"true", "question_id"=>"8"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/answers_controller.rb:9
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:9
+  [1m[36mAnswer Create (0.9ms)[0m  [1m[32mINSERT INTO "answers" ("value", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["value", true], ["question_id", 8], ["created_at", "2018-06-25 19:29:02.833611"], ["updated_at", "2018-06-25 19:29:02.833611"]]
+  ↳ app/controllers/answers_controller.rb:9
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/answers_controller.rb:9
+  Rendering answers/show.json.jbuilder
+  Rendered answers/show.json.jbuilder (7.4ms)
+Completed 201 Created in 97ms (Views: 18.3ms | ActiveRecord: 17.2ms)
+
+
