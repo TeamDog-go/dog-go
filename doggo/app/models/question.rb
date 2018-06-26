@@ -6,8 +6,12 @@
 #  content    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class Question < ApplicationRecord
   has_many :answers
+  belongs_to :user
+
+  validates :content, presence: true
 end
