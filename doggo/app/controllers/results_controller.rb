@@ -29,4 +29,9 @@ class ResultsController < ApplicationController
     params.permit(:initial_score, :final_score, :survey_id, :color)
   end
 
+  def destroy
+    @result = result.find(params[:id])
+    @result.destroy
+  end
+
 end
