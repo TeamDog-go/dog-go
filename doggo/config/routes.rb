@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :answers
   resources :users
   resources :sessions
+  resources :results
 end
