@@ -21,22 +21,22 @@ class ResultsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
-    if @question.save        
+    @result = Result.new(result_params)
+    if @result.save        
       respond_to do |format|
         format.json { render :show, status: 201 }
       end
     else
       respond_to do |format|
-        format.json { render @question.errors, status: 400 }
+        format.json { render @result.errors, status: 400 }
       end
     end
   end
 
   private
 
-  def question_params
-    params.permit(:content)
+  def result_params
+    params.permit(:score, :user_id, :color)
   end
 
 end
