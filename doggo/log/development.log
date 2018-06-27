@@ -5761,3 +5761,12 @@ Unpermitted parameters: :score, :user_id
 Completed 201 Created in 25ms (Views: 13.1ms | ActiveRecord: 7.1ms)
 
 
+Started GET "/results" for 127.0.0.1 at 2018-06-27 15:52:10 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ResultsController#index as */*
+  [1m[36mResult Load (0.8ms)[0m  [1m[34mSELECT "results".* FROM "results"[0m
+  ↳ app/controllers/results_controller.rb:5
+Completed 200 OK in 36ms (Views: 18.7ms | ActiveRecord: 6.2ms)
+
+
