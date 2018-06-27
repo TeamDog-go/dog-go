@@ -2692,3 +2692,55 @@ Processing by AnswersController#show as */*
 Completed 200 OK in 118ms (Views: 44.8ms | ActiveRecord: 5.5ms)
 
 
+Started POST "/results" for 127.0.0.1 at 2018-06-27 11:25:43 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ResultsController#create as */*
+  Parameters: {"score"=>"25", "user_id"=>"1", "color"=>"red"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/results_controller.rb:25
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:25
+  [1m[36mResult Create (0.8ms)[0m  [1m[32mINSERT INTO "results" ("score", "user_id", "created_at", "updated_at", "color") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["score", 25], ["user_id", 1], ["created_at", "2018-06-27 15:25:44.507308"], ["updated_at", "2018-06-27 15:25:44.507308"], ["color", "red"]]
+  ↳ app/controllers/results_controller.rb:25
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/results_controller.rb:25
+  Rendering results/show.json.jbuilder
+  Rendered results/show.json.jbuilder (12.1ms)
+Completed 201 Created in 103ms (Views: 21.7ms | ActiveRecord: 18.2ms)
+
+
+Started POST "/results" for 127.0.0.1 at 2018-06-27 11:27:19 -0400
+Processing by ResultsController#create as */*
+  Parameters: {"score"=>"85", "user_id"=>"1", "color"=>"green"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/results_controller.rb:25
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:25
+  [1m[36mResult Create (0.6ms)[0m  [1m[32mINSERT INTO "results" ("score", "user_id", "created_at", "updated_at", "color") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["score", 85], ["user_id", 1], ["created_at", "2018-06-27 15:27:29.321788"], ["updated_at", "2018-06-27 15:27:29.321788"], ["color", "green"]]
+  ↳ app/controllers/results_controller.rb:25
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/results_controller.rb:25
+Completed 404 Not Found in 51ms (ActiveRecord: 17.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Result without an ID):
+  
+app/controllers/results_controller.rb:26:in `create'
+Started POST "/results" for 127.0.0.1 at 2018-06-27 11:30:56 -0400
+Processing by ResultsController#create as */*
+  Parameters: {"score"=>"85", "user_id"=>"1", "color"=>"green"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/results_controller.rb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:25
+  [1m[36mResult Create (0.4ms)[0m  [1m[32mINSERT INTO "results" ("score", "user_id", "created_at", "updated_at", "color") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["score", 85], ["user_id", 1], ["created_at", "2018-06-27 15:30:56.794943"], ["updated_at", "2018-06-27 15:30:56.794943"], ["color", "green"]]
+  ↳ app/controllers/results_controller.rb:25
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/results_controller.rb:25
+  Rendering results/show.json.jbuilder
+  Rendered results/show.json.jbuilder (0.4ms)
+Completed 201 Created in 51ms (Views: 2.8ms | ActiveRecord: 11.0ms)
+
+

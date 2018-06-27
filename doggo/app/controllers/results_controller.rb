@@ -28,7 +28,7 @@ class ResultsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.json { render @result.errors, status: 400 }
+        format.json { render @question.errors, status: 400 }
       end
     end
   end
