@@ -24,6 +24,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.permit(:content)
+    params.permit(:content, :survey_id)
   end
 end
