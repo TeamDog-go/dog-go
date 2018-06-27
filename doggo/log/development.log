@@ -2680,3 +2680,15 @@ Migrating to AddColorAndContentToResultAndAnswers (20180627145929)
   ↳ db/seeds.rb:28
   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:28
+Started GET "/answers/1" for 127.0.0.1 at 2018-06-27 11:14:12 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AnswersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:3
+  Rendering answers/show.json.jbuilder
+  Rendered answers/show.json.jbuilder (7.3ms)
+Completed 200 OK in 118ms (Views: 44.8ms | ActiveRecord: 5.5ms)
+
+
