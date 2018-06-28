@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :sessions
   resources :results
   resources :surveys
+  resources :feedbacks
 end

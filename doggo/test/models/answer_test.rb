@@ -3,11 +3,11 @@
 # Table name: answers
 #
 #  id          :bigint(8)        not null, primary key
-#  value       :boolean
 #  question_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  a_content   :string
+#  a_color     :string
 #
 
 require 'test_helper'

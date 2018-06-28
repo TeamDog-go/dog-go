@@ -23,6 +23,15 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        @user = User.find(params[:id])
+        if @user.update(user_params)
+          render json: @user, status: 200
+        else 
+          render json: @user.errors, status: 400
+        end
+    end
+
     def destroy
         @user = User.find(params[:id])
         @user.destroy
