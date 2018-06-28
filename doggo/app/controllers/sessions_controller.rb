@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
         else
             render json: { error: "Invalid credentials" }, status: :unauthorized
         end
-      end
+    end
   
-      def destroy
-        session[:user_id] = nil
-      end 
+    def destroy
+      session[:user_id] = nil
+    end 
 end
