@@ -7,17 +7,7 @@ class ResultsController < ApplicationController
 
   def show
     @result = Result.find(params[:id])
-    @user = User.find(@result.user_id)
-    respond_to do |format|
-      format.json do 
-        render json: {
-          user_id: @user.id,
-          user_questions: @user.questions,
-          user_answers: @user.answers,
-          result: @user.results
-      }.to_json
-      end
-    end
+    render json: @result
   end
 
   def create
@@ -36,7 +26,12 @@ class ResultsController < ApplicationController
   private
 
   def result_params
-    params.permit(:score, :user_id, :color)
+    params.permit(:initial_score, :final_score, :survey_id, :color)
+  end
+
+  def destroy
+    @result = result.find(params[:id])
+    @result.destroy
   end
 
 end

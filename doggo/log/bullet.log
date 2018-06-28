@@ -1,0 +1,28 @@
+2018-06-27 16:37:06[WARN] user: parkerpreyer
+GET /surveys
+USE eager loading detected
+  Survey => [:questions]
+  Add to your finder: :includes => [:questions]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/surveys/index.json.jbuilder:5:in `block in _app_views_surveys_index_json_jbuilder__2708353398484811853_70116969383040'
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/surveys/index.json.jbuilder:1:in `_app_views_surveys_index_json_jbuilder__2708353398484811853_70116969383040'
+
+2018-06-27 16:37:06[WARN] user: parkerpreyer
+GET /surveys
+USE eager loading detected
+  Question => [:answer]
+  Add to your finder: :includes => [:answer]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/surveys/index.json.jbuilder:6:in `block (2 levels) in _app_views_surveys_index_json_jbuilder__2708353398484811853_70116969383040'
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/surveys/index.json.jbuilder:5:in `block in _app_views_surveys_index_json_jbuilder__2708353398484811853_70116969383040'
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/surveys/index.json.jbuilder:1:in `_app_views_surveys_index_json_jbuilder__2708353398484811853_70116969383040'
+
+2018-06-27 16:37:06[WARN] user: parkerpreyer
+GET /surveys
+USE eager loading detected
+  Survey => [:result]
+  Add to your finder: :includes => [:result]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/surveys/index.json.jbuilder:8:in `block in _app_views_surveys_index_json_jbuilder__2708353398484811853_70116969383040'
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/surveys/index.json.jbuilder:1:in `_app_views_surveys_index_json_jbuilder__2708353398484811853_70116969383040'
+

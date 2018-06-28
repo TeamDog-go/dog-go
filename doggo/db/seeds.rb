@@ -12,22 +12,28 @@ users = User.create([
   { username: "cp", password: "cp" }
 ])
 
+surveys = Survey.create([
+  { id: 1, user_id: 1 },
+  { id: 2, user_id: 2 },
+  { id: 3, user_id: 3 }
+])
+
 questions = Question.create(
   [
-    { id: 1, content: "What's up doc?", user_id: 1 }, 
-    { id: 2, content: "What's goin on?", user_id: 2 },
-    { id: 3, content: "How's the weather?", user_id: 3 }
+    { id: 1, content: "What's up doc?", survey_id: 1 }, 
+    { id: 2, content: "What's goin on?", survey_id: 1 },
+    { id: 3, content: "How's the weather?", survey_id: 1 }
   ])
 
   answers = Answer.create([
-    { question_id: 1, value: true, a_content: "yes", user_id: 1 },
-    { question_id: 2, value: false, a_content: "no", user_id: 2 },
-    { question_id: 3, value: nil, a_content: "maybe", user_id: 3 }
+    { question_id: 1, value: true, a_content: "yes" },
+    { question_id: 2, value: false, a_content: "no" },
+    { question_id: 3, value: nil, a_content: "maybe" }
   ])
 
   results = Result.create([
-    { user_id: 1, score: 25, color: "red" },
-    { user_id: 2, score: 75, color: "yellow" },
-    { user_id: 3, score: 95, color: "green" },
-    { user_id: 3, score: 100, color: "green" }
+    { survey_id: 1, initial_score: 25, final_score: 50, color: "red" },
+    { survey_id: 2, initial_score: 75, final_score: 70, color: "yellow" },
+    { survey_id: 3, initial_score: 95, final_score: 100, color: "green" },
+    { survey_id: 3, initial_score: 100, final_score: 120, color: "green" }
   ])

@@ -1,5 +1,6 @@
 json.results @results do |result|
   json.id result.id
-  json.score result.score
-  json.user_id result.user_id
+  json.survey_id result.survey_id
+  json.initial_score result.initial_score
+  json.final_score result.final_score
 end
