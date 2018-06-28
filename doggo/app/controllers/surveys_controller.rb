@@ -20,6 +20,15 @@ class SurveysController < ApplicationController
     end
   end
 
+  def update
+    @survey = Survey.find(params[:id])
+    if @survey.update(survey_params)
+      render json: @survey, status: 200
+    else 
+      render json: @survey.errors, status: 400
+    end
+  end
+
   def destroy
     @survey = Survey.find(params[:id])
     @survey.destroy
@@ -28,7 +37,7 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.permit(:user_id)
+    params.permit(:user_id, :source)
   end
 
 end

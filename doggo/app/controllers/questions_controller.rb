@@ -21,6 +21,15 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      render json: @question, status: 200
+    else 
+      render json: @question.errors, status: 400
+    end
+  end
+
   def destroy
     @question = Question.find(params[:id])
     @question.destroy

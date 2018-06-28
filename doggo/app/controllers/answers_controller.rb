@@ -17,6 +17,15 @@ class AnswersController < ApplicationController
     end
   end
 
+  def update
+    @answer = Answer.find(params[:id])
+    if @answer.update(answer_params)
+      render json: @answer, status: 200
+    else 
+      render json: @answer.errors, status: 400
+    end
+  end
+
   def destroy
     @answer = Answer.find(params[:id])
     @answer.destroy
@@ -25,7 +34,7 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params.permit(:value, :question_id, :a_content)
+    params.permit(:question_id, :a_content, :a_color)
   end
 
 end
