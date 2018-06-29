@@ -8,6 +8,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  api_token       :string
+#  admin           :boolean          default(FALSE), not null
 #
 
 require 'test_helper'
