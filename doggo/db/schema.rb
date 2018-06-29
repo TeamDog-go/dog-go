@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2018_06_28_182741) do
+ActiveRecord::Schema.define(version: 2018_06_29_200029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_06_28_182741) do
     t.datetime "updated_at", null: false
     t.string "a_content"
     t.string "a_color"
+    t.integer "points"
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -46,11 +46,21 @@ ActiveRecord::Schema.define(version: 2018_06_28_182741) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "options", force: :cascade do |t|
+    t.integer "question_id"
+    t.string "o_content"
+    t.string "o_color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "avail_points"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "survey_id"
+    t.string "source"
   end
 
   create_table "results", force: :cascade do |t|
@@ -67,7 +77,6 @@ ActiveRecord::Schema.define(version: 2018_06_28_182741) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "source"
   end
 
   create_table "users", force: :cascade do |t|
