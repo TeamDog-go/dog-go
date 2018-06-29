@@ -1,5 +1,6 @@
 json.questions @questions do |question|
   json.id question.id
   json.content question.content
-  json.answer question.answer
+  json.answers question.answers
+  json.options question.options
 end
