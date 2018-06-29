@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   include ActionController::MimeResponds
   include ActionController::HttpAuthentication::Token::ControllerMethods
   helper_method :current_user
@@ -12,6 +12,14 @@ class ApplicationController < ActionController::API
   def current_user    
     @user ||= User.find_by(api_token: bearer_token)
     return @user
-  end 
+  end
+  
+  # restrict access to admin module for non-admin users
+def authenticate_admin_user!
+  raise SecurityError unless current_user.try(:admin?)
+  rescue_from SecurityError do |exception|
+    redirect_to root_url
+  end
+end
   
 end

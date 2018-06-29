@@ -1,4 +1,4 @@
-class AnswersController < ApplicationController
+class AnswersController < ApiController
   def show
     @answer = Answer.find(params[:id])
   end
