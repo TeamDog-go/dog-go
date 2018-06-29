@@ -3,7 +3,7 @@ json.surveys @surveys do |survey|
   json.user_id survey.user_id
   json.questions survey.questions
   json.answers survey.questions do |question|
-    json.merge! question.answer
+    json.merge! question.answers
   end
   json.feedbacks survey.answers do |answer|
     json.merge! answer.feedback
