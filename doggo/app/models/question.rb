@@ -10,7 +10,8 @@
 #
 
 class Question < ApplicationRecord
-  has_one :answer
+  has_many :answers
+  has_many :options
   belongs_to :survey
 
   validates :content, presence: true
