@@ -25,4 +25,11 @@ class User < ApplicationRecord
     def to_s
         username
     end
+
+    def to_json
+        {username: self.username, 
+        id: self.id,
+        admin: self.admin}
+    end
+
 end

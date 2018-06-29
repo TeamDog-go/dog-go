@@ -5995,3 +5995,664 @@ Migrating to AddAdminToUsers (20180628174857)
   ↳ bin/rails:9
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/user/1" for 127.0.0.1 at 2018-06-29 13:56:40 -0400
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Spoonflower/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.0) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.0) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4503895740962357565)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddIntialFeelingAndFinalFeelingRemoveInitialScoreFromResults (20180628160315)
+  [1m[35m (12.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (29.1ms)[0m  [1m[35mALTER TABLE "results" ADD "initial_feeling" integer[0m
+  ↳ db/migrate/20180628160315_add_intial_feeling_and_final_feeling_remove_initial_score_from_results.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "results" ADD "final_feeling" integer[0m
+  ↳ db/migrate/20180628160315_add_intial_feeling_and_final_feeling_remove_initial_score_from_results.rb:4
+  [1m[35m (13.7ms)[0m  [1m[35mALTER TABLE "results" DROP COLUMN "initial_score"[0m
+  ↳ db/migrate/20180628160315_add_intial_feeling_and_final_feeling_remove_initial_score_from_results.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (7.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180628160315"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddColorToAnswer (20180628160718)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.4ms)[0m  [1m[35mALTER TABLE "answers" ADD "a_color" character varying[0m
+  ↳ db/migrate/20180628160718_add_color_to_answer.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180628160718"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFeedbacks (20180628161134)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (97.1ms)[0m  [1m[35mCREATE TABLE "feedbacks" ("id" bigserial primary key, "answer_id" integer, "f_content" character varying, "f_color" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180628161134_create_feedbacks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180628161134"]]
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to RemoveValueFromAnswer (20180628162057)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "answers" DROP COLUMN "value"[0m
+  ↳ db/migrate/20180628162057_remove_value_from_answer.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180628162057"]]
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddSourceToSurvey (20180628162355)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.6ms)[0m  [1m[35mALTER TABLE "surveys" ADD "source" character varying[0m
+  ↳ db/migrate/20180628162355_add_source_to_survey.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180628162355"]]
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (10.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4503895740962357565)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/user/1" for 127.0.0.1 at 2018-06-29 13:59:52 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Spoonflower/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (9.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "p"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (17.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at", "api_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "p"], ["password_digest", "$2a$10$0Q9kQEGkgQ8N0F3jEBChJuPCovMkczm8ooTCPRbFpXLWQj0/k33mK"], ["created_at", "2018-06-29 18:00:15.472702"], ["updated_at", "2018-06-29 18:00:15.472702"], ["api_token", "KDsrxvNfZd2qtHDDPGPCuVUS"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "c"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at", "api_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "c"], ["password_digest", "$2a$10$fTwaihD.kebw6qMqVN5YF.vb0n3Slmd.PzBxRvoYaQXNO5ok2uR4a"], ["created_at", "2018-06-29 18:00:15.587221"], ["updated_at", "2018-06-29 18:00:15.587221"], ["api_token", "wmWTeJZioXeLYjGeyUH8PbWZ"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cp"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at", "api_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "cp"], ["password_digest", "$2a$10$ggV2sHv94qAfb5syGC3fouPnDj0yQOu/V7sRSFbce70Iu3K9FKA8C"], ["created_at", "2018-06-29 18:00:15.664669"], ["updated_at", "2018-06-29 18:00:15.664669"], ["api_token", "xzcfWpv2Db9oA4iVHDHKKWHR"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mSurvey Create (15.1ms)[0m  [1m[32mINSERT INTO "surveys" ("id", "user_id", "created_at", "updated_at", "source") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1], ["user_id", 1], ["created_at", "2018-06-29 18:00:15.728855"], ["updated_at", "2018-06-29 18:00:15.728855"], ["source", "Rescue"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mSurvey Create (0.6ms)[0m  [1m[32mINSERT INTO "surveys" ("id", "user_id", "created_at", "updated_at", "source") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 2], ["user_id", 2], ["created_at", "2018-06-29 18:00:15.756184"], ["updated_at", "2018-06-29 18:00:15.756184"], ["source", "Shelter"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mSurvey Create (0.5ms)[0m  [1m[32mINSERT INTO "surveys" ("id", "user_id", "created_at", "updated_at", "source") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 3], ["user_id", 3], ["created_at", "2018-06-29 18:00:15.764682"], ["updated_at", "2018-06-29 18:00:15.764682"], ["source", "Shelter"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mQuestion Create (4.2ms)[0m  [1m[32mINSERT INTO "questions" ("id", "content", "created_at", "updated_at", "survey_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1], ["content", "What's up doc?"], ["created_at", "2018-06-29 18:00:15.795384"], ["updated_at", "2018-06-29 18:00:15.795384"], ["survey_id", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("id", "content", "created_at", "updated_at", "survey_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 2], ["content", "What's goin on?"], ["created_at", "2018-06-29 18:00:15.806228"], ["updated_at", "2018-06-29 18:00:15.806228"], ["survey_id", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("id", "content", "created_at", "updated_at", "survey_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 3], ["content", "How's the weather?"], ["created_at", "2018-06-29 18:00:15.812377"], ["updated_at", "2018-06-29 18:00:15.812377"], ["survey_id", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAnswer Create (20.9ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "created_at", "updated_at", "a_content", "a_color") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 1], ["created_at", "2018-06-29 18:00:15.848415"], ["updated_at", "2018-06-29 18:00:15.848415"], ["a_content", "yes"], ["a_color", "green"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "created_at", "updated_at", "a_content", "a_color") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 2], ["created_at", "2018-06-29 18:00:15.877265"], ["updated_at", "2018-06-29 18:00:15.877265"], ["a_content", "no"], ["a_color", "red"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "created_at", "updated_at", "a_content", "a_color") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 3], ["created_at", "2018-06-29 18:00:15.885351"], ["updated_at", "2018-06-29 18:00:15.885351"], ["a_content", "maybe"], ["a_color", "yellow"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mResult Create (6.5ms)[0m  [1m[32mINSERT INTO "results" ("created_at", "updated_at", "color", "survey_id", "final_score", "initial_feeling", "final_feeling") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", "2018-06-29 18:00:15.917879"], ["updated_at", "2018-06-29 18:00:15.917879"], ["color", "red"], ["survey_id", 1], ["final_score", 50], ["initial_feeling", 2], ["final_feeling", 4]]
+  ↳ db/seeds.rb:34
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mResult Create (0.6ms)[0m  [1m[32mINSERT INTO "results" ("created_at", "updated_at", "color", "survey_id", "final_score", "initial_feeling", "final_feeling") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", "2018-06-29 18:00:15.931671"], ["updated_at", "2018-06-29 18:00:15.931671"], ["color", "yellow"], ["survey_id", 2], ["final_score", 70], ["initial_feeling", 3], ["final_feeling", 4]]
+  ↳ db/seeds.rb:34
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mResult Create (0.6ms)[0m  [1m[32mINSERT INTO "results" ("created_at", "updated_at", "color", "survey_id", "final_score", "initial_feeling", "final_feeling") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", "2018-06-29 18:00:15.939973"], ["updated_at", "2018-06-29 18:00:15.939973"], ["color", "green"], ["survey_id", 3], ["final_score", 100], ["initial_feeling", 4], ["final_feeling", 5]]
+  ↳ db/seeds.rb:34
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mResult Create (0.6ms)[0m  [1m[32mINSERT INTO "results" ("created_at", "updated_at", "color", "survey_id", "final_score", "initial_feeling", "final_feeling") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", "2018-06-29 18:00:15.949235"], ["updated_at", "2018-06-29 18:00:15.949235"], ["color", "green"], ["survey_id", 3], ["final_score", 120], ["initial_feeling", 5], ["final_feeling", 3]]
+  ↳ db/seeds.rb:34
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mFeedback Create (3.5ms)[0m  [1m[32mINSERT INTO "feedbacks" ("answer_id", "f_content", "f_color", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["answer_id", 1], ["f_content", "Not good"], ["f_color", "red"], ["created_at", "2018-06-29 18:00:15.988167"], ["updated_at", "2018-06-29 18:00:15.988167"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mFeedback Create (0.4ms)[0m  [1m[32mINSERT INTO "feedbacks" ("answer_id", "f_content", "f_color", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["answer_id", 2], ["f_content", "Ok"], ["f_color", "yellow"], ["created_at", "2018-06-29 18:00:15.998326"], ["updated_at", "2018-06-29 18:00:15.998326"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mFeedback Create (0.6ms)[0m  [1m[32mINSERT INTO "feedbacks" ("answer_id", "f_content", "f_color", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["answer_id", 3], ["f_content", "Great!"], ["f_color", "green"], ["created_at", "2018-06-29 18:00:16.005891"], ["updated_at", "2018-06-29 18:00:16.005891"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+Started GET "/user/1" for 127.0.0.1 at 2018-06-29 14:00:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:00:33 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 94ms (Views: 0.7ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:08:59 -0400
+  
+SyntaxError (/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:41: syntax error, unexpected '}', expecting &. or :: or '[' or '.'
+...puts {@user.username, @user.id}
+...                              ^
+/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:51: syntax error, unexpected keyword_end, expecting '}'):
+  
+app/controllers/users_controller.rb:41: syntax error, unexpected '}', expecting &. or :: or '[' or '.'
+app/controllers/users_controller.rb:51: syntax error, unexpected keyword_end, expecting '}'
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:09:45 -0400
+  
+SyntaxError (/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:41: syntax error, unexpected '}', expecting &. or :: or '[' or '.'
+...  puts {user.username, user.id}
+...                              ^
+/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:51: syntax error, unexpected keyword_end, expecting '}'):
+  
+app/controllers/users_controller.rb:41: syntax error, unexpected '}', expecting &. or :: or '[' or '.'
+app/controllers/users_controller.rb:51: syntax error, unexpected keyword_end, expecting '}'
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:10:52 -0400
+  
+SyntaxError (/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:41: syntax error, unexpected ',', expecting =>
+        {user.username, user.id}
+                      ^
+/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:41: syntax error, unexpected '}', expecting keyword_end
+...       {user.username, user.id}
+...                              ^
+/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:41: syntax error, unexpected ',', expecting =>
+app/controllers/users_controller.rb:41: syntax error, unexpected '}', expecting keyword_end
+app/controllers/users_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:11:25 -0400
+  
+SyntaxError (/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:41: syntax error, unexpected ',', expecting =>
+        {user.username, 
+                      ^
+/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:42: syntax error, unexpected '}', expecting keyword_end
+            user.id}
+                   ^
+/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:41: syntax error, unexpected ',', expecting =>
+app/controllers/users_controller.rb:42: syntax error, unexpected '}', expecting keyword_end
+app/controllers/users_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:14:00 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 48ms (Views: 0.3ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:14:24 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:14:44 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 55ms (Views: 0.1ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:15:26 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 8.4ms)
+
+
+  
+NoMethodError (undefined method `json' for #<User:0x00007fb5283bd3c0>):
+  
+app/controllers/users_controller.rb:20:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:16:04 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 4.9ms)
+
+
+  
+NoMethodError (undefined method `json' for #<User:0x00007fb5289ab7a0>):
+  
+app/controllers/users_controller.rb:20:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:16:43 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 43ms (Views: 0.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:18:05 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 37ms (Views: 0.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-29 14:21:06 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 40ms (Views: 0.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:22:05 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:22:38 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:22:41 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:23:10 -0400
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `all' for #<String:0x00007fb52a990f70>):
+  
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:23:27 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 36ms (Views: 12.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:25:29 -0400
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 134ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x00007fb52a9bf3c0>):
+  
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:26:10 -0400
+Processing by UsersController#index as */*
+Completed 404 Not Found in 25ms (ActiveRecord: 8.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:27:33 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 500 Internal Server Error in 31ms (Views: 0.4ms | ActiveRecord: 5.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/users_controller.rb:6:in `block in index'
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:28:02 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 155ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:28:25 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 4.2ms)
+
+
+  
+NoMethodError (undefined method `prints' for #<UsersController:0x00007fb528154278>
+Did you mean?  print
+               printf
+               sprintf):
+  
+app/controllers/users_controller.rb:6:in `block in index'
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:28:37 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 153ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:29:34 -0400
+  
+SyntaxError (/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:5: syntax error, unexpected tLABEL, expecting '='
+...@users.each do to_json, status: 200
+...                        ^~~~~~~
+/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:48: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:5: syntax error, unexpected tLABEL, expecting '='
+app/controllers/users_controller.rb:48: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:29:55 -0400
+  
+SyntaxError (/Users/Spoonflower/Desktop/tail/doggo/app/controllers/users_controller.rb:5: syntax error, unexpected tLABEL, expecting '='
+...@users.each do to_json, status: 200
+...                        ^~~~~~~):
+  
+app/controllers/users_controller.rb:5: syntax error, unexpected tLABEL, expecting '='
+Started GET "/users/" for 127.0.0.1 at 2018-06-29 14:31:33 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/Spoonflower/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/Spoonflower/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `username' for #<User::ActiveRecord_Relation:0x00007fb52a99ad90>):
+  
+app/controllers/users_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/Spoonflower/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Started POST "/sessions?username=c&password=[FILTERED]" for 127.0.0.1 at 2018-06-29 14:33:30 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"c", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "c"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 401 Unauthorized in 124ms (Views: 0.3ms | ActiveRecord: 16.1ms)
+
+
+Started POST "/user?username=Pants&password=[FILTERED]" for 127.0.0.1 at 2018-06-29 14:33:58 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users?username=Pants&password=[FILTERED]" for 127.0.0.1 at 2018-06-29 14:35:04 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Pants", "password"=>"[FILTERED]"}
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Pants"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Create (9.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at", "api_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Pants"], ["password_digest", "$2a$10$YFeoVO40fM1rVoEaWJC8m.URfEqvw2O4u7v3f31dvvSB3SOmqw9ou"], ["created_at", "2018-06-29 18:35:04.918975"], ["updated_at", "2018-06-29 18:35:04.918975"], ["api_token", "AyThVrrkf4goYKtZBs8GD1gY"]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 200 OK in 99ms (Views: 0.4ms | ActiveRecord: 17.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-06-29 14:35:15 -0400
+Processing by SessionsController#create as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions?username=Pants&password=[FILTERED]" for 127.0.0.1 at 2018-06-29 14:35:33 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Pants", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Pants"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 200 OK in 75ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-29 14:38:32 -0400
+Processing by UsersController#create as */*
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (9.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 400 Bad Request in 105ms (Views: 1.1ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-29 14:38:37 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/Spoonflower/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/Spoonflower/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `map!' for #<User::ActiveRecord_Relation:0x00007fb5279a9618>
+Did you mean?  map):
+  
+app/controllers/users_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/Spoonflower/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Started GET "/users" for 127.0.0.1 at 2018-06-29 14:39:35 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 43ms (Views: 0.7ms | ActiveRecord: 8.3ms)
+
+

@@ -4,7 +4,7 @@ class SessionsController < ApiController
   
         if user && user.authenticate(params[:password])
           session[:api_token] = user.api_token
-          render json: user
+          render json: user.to_json
         else
             render json: { error: "Invalid credentials" }, status: :unauthorized
         end
