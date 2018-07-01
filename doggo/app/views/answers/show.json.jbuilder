@@ -1,4 +1,4 @@
-json.answer do
+json.answers do
   json.id @answer.id
   json.answer_color @answer.a_color
   json.answer_content @answer.a_content
