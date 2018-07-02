@@ -6,13 +6,22 @@ class FeedbacksController < ApplicationController
 
   def show
     @feedback = Feedback.find(params[:id])
-    render json: @feedback.errors, status: 400
+    render json: @feedback
+  end
+
+  def create
+    @feedback = Feedback.new(feedbacks_params)
+    if @feedback.save
+      render json: @feedback, status: 201 
+    else
+      render json: @feedback.errors, status: 400 
+    end
   end
 
   private
   
-  def feedback_params
-    params.permit(:answer_id, :f_content, :f_color)
+  def feedbacks_params
+    params.permit(:f_content, :f_color, :option_id)
   end
 
 end
