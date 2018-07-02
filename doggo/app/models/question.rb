@@ -15,4 +15,5 @@ class Question < ApplicationRecord
   has_many :options
   belongs_to :survey, optional: true
   validates :content, presence: true
+  accepts_nested_attributes_for :answers, :allow_destroy => true
 end
