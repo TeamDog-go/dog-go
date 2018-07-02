@@ -1,4 +1,4 @@
-class SurveysController < ApiController
+class SurveysController < ApplicationController
   def index
     @surveys = Survey.all 
   end

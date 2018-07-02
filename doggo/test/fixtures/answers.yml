@@ -8,6 +8,7 @@
 #  updated_at  :datetime         not null
 #  a_content   :string
 #  a_color     :string
+#  points      :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
