@@ -1,4 +1,8 @@
 class OptionsController < ApplicationController
+    def index
+        @options = Option.all
+    end
+    
     def create
         @option = Option.new(options_params)
         if @option.save

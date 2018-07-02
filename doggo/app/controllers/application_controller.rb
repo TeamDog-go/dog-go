@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   include ActionController::MimeResponds
   include ActionController::HttpAuthentication::Token::ControllerMethods
+  protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
   helper_method :current_user
 
   def bearer_token
