@@ -1,4 +1,4 @@
-class FeedbacksController < ApiController
+class FeedbacksController < ApplicationController
   def index
     @feedbacks = Feedback.all
     render json: @feedbacks, status: 200

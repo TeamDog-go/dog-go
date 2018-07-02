@@ -13,17 +13,17 @@ users = User.create([
 ])
 
 surveys = Survey.create([
-  { id: 1, user_id: 1, source: "Rescue" },
-  { id: 2, user_id: 2, source: "Shelter" },
-  { id: 3, user_id: 3, source: "Shelter" }
+  { id: 1, user_id: 1 },
+  { id: 2, user_id: 2 },
+  { id: 3, user_id: 3 }
 ])
 
-questions = Question.create(
-  [
-    { id: 1, content: "What's up doc?", survey_id: 1 }, 
-    { id: 2, content: "What's goin on?", survey_id: 1 },
-    { id: 3, content: "How's the weather?", survey_id: 1 }
-  ])
+# questions = Question.create(
+#   [
+#     { id: 1, content: "What's up doc?", source: "Shelter", survey_id: 1 }, 
+#     { id: 2, content: "What's goin on?", source: "Shelter", survey_id: 1 },
+#     { id: 3, content: "How's the weather?", source: "Rescue", survey_id: 1 }
+#   ])
 
   answers = Answer.create([
     { question_id: 1, a_content: "yes", a_color: "green" },

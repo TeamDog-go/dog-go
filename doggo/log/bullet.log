@@ -26,3 +26,202 @@ Call stack
   /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/surveys/index.json.jbuilder:8:in `block in _app_views_surveys_index_json_jbuilder__2708353398484811853_70116969383040'
   /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/surveys/index.json.jbuilder:1:in `_app_views_surveys_index_json_jbuilder__2708353398484811853_70116969383040'
 
+2018-06-29 16:48:41[WARN] user: parkerpreyer
+GET /admin/answers
+USE eager loading detected
+  Answer => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-06-29 16:52:53[WARN] user: parkerpreyer
+GET /admin/answers
+USE eager loading detected
+  Answer => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-06-29 16:52:56[WARN] user: parkerpreyer
+GET /admin/answers
+USE eager loading detected
+  Answer => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-06-29 16:53:32[WARN] user: parkerpreyer
+GET /admin/answers
+USE eager loading detected
+  Answer => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-06-29 16:53:34[WARN] user: parkerpreyer
+GET /admin/answers
+USE eager loading detected
+  Answer => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-06-29 16:54:13[WARN] user: parkerpreyer
+GET /admin/answers
+USE eager loading detected
+  Answer => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-06-29 16:54:30[WARN] user: parkerpreyer
+GET /admin/answers
+USE eager loading detected
+  Answer => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-06-29 16:54:30[WARN] user: parkerpreyer
+GET /admin/feedbacks
+USE eager loading detected
+  Feedback => [:answer]
+  Add to your finder: :includes => [:answer]
+Call stack
+
+2018-06-29 16:54:31[WARN] user: parkerpreyer
+GET /admin/questions
+USE eager loading detected
+  Question => [:survey]
+  Add to your finder: :includes => [:survey]
+Call stack
+
+2018-06-29 16:54:32[WARN] user: parkerpreyer
+GET /admin/results
+USE eager loading detected
+  Result => [:survey]
+  Add to your finder: :includes => [:survey]
+Call stack
+
+2018-06-29 16:54:33[WARN] user: parkerpreyer
+GET /admin/surveys
+USE eager loading detected
+  Survey => [:user]
+  Add to your finder: :includes => [:user]
+Call stack
+
+2018-06-29 17:02:52[WARN] user: parkerpreyer
+GET /admin/answers
+USE eager loading detected
+  Answer => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-06-29 17:03:00[WARN] user: parkerpreyer
+GET /admin/answers
+USE eager loading detected
+  Answer => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-06-29 17:03:05[WARN] user: parkerpreyer
+GET /admin/feedbacks
+USE eager loading detected
+  Feedback => [:answer]
+  Add to your finder: :includes => [:answer]
+Call stack
+
+2018-06-29 17:03:09[WARN] user: parkerpreyer
+GET /admin/questions
+USE eager loading detected
+  Question => [:survey]
+  Add to your finder: :includes => [:survey]
+Call stack
+
+2018-06-29 17:03:09[WARN] user: parkerpreyer
+GET /admin/results
+USE eager loading detected
+  Result => [:survey]
+  Add to your finder: :includes => [:survey]
+Call stack
+
+2018-06-29 17:03:10[WARN] user: parkerpreyer
+GET /admin/surveys
+USE eager loading detected
+  Survey => [:user]
+  Add to your finder: :includes => [:user]
+Call stack
+
+2018-07-01 13:14:50[WARN] user: parkerpreyer
+GET /questions
+USE eager loading detected
+  Question => [:answers]
+  Add to your finder: :includes => [:answers]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:7:in `_app_views_questions_index_json_jbuilder__2682589839118012174_70238513821380'
+
+2018-07-01 13:14:50[WARN] user: parkerpreyer
+GET /questions
+USE eager loading detected
+  Question => [:options]
+  Add to your finder: :includes => [:options]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:7:in `_app_views_questions_index_json_jbuilder__2682589839118012174_70238513821380'
+
+2018-07-02 08:25:03[WARN] user: parkerpreyer
+GET /questions
+USE eager loading detected
+  Question => [:answers]
+  Add to your finder: :includes => [:answers]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:7:in `_app_views_questions_index_json_jbuilder___259776928680806912_70168323184980'
+
+2018-07-02 08:25:03[WARN] user: parkerpreyer
+GET /questions
+USE eager loading detected
+  Question => [:options]
+  Add to your finder: :includes => [:options]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:7:in `_app_views_questions_index_json_jbuilder___259776928680806912_70168323184980'
+
+2018-07-02 09:23:37[WARN] user: parkerpreyer
+GET /questions?o_content=status?&question_id=1&o_color=red&avail_points=10
+USE eager loading detected
+  Question => [:answers]
+  Add to your finder: :includes => [:answers]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:8:in `_app_views_questions_index_json_jbuilder__506114871666658319_70262480619320'
+
+2018-07-02 09:23:37[WARN] user: parkerpreyer
+GET /questions?o_content=status?&question_id=1&o_color=red&avail_points=10
+USE eager loading detected
+  Question => [:options]
+  Add to your finder: :includes => [:options]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:8:in `_app_views_questions_index_json_jbuilder__506114871666658319_70262480619320'
+
+2018-07-02 09:41:53[WARN] user: parkerpreyer
+GET /questions
+USE eager loading detected
+  Question => [:answers]
+  Add to your finder: :includes => [:answers]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:8:in `_app_views_questions_index_json_jbuilder__2506919656677686853_70258799514360'
+
+2018-07-02 09:41:53[WARN] user: parkerpreyer
+GET /questions
+USE eager loading detected
+  Question => [:options]
+  Add to your finder: :includes => [:options]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:8:in `_app_views_questions_index_json_jbuilder__2506919656677686853_70258799514360'
+
+2018-07-02 11:04:01[WARN] user: parkerpreyer
+GET /questions
+USE eager loading detected
+  Question => [:answers]
+  Add to your finder: :includes => [:answers]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:8:in `_app_views_questions_index_json_jbuilder___1890387011187425869_70353575833320'
+
+2018-07-02 11:04:01[WARN] user: parkerpreyer
+GET /questions
+USE eager loading detected
+  Question => [:options]
+  Add to your finder: :includes => [:options]
+Call stack
+  /Users/parkerpreyer/Momentum/Final_Project/tail/doggo/app/views/questions/index.json.jbuilder:8:in `_app_views_questions_index_json_jbuilder___1890387011187425869_70353575833320'
+
