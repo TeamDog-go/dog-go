@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :surveys
   resources :feedbacks
   resources :options
-  ActiveAdmin.routes(self)
+  # ActiveAdmin.routes(self)
 end

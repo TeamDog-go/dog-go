@@ -18,7 +18,7 @@ class ResultsController < ApiController
       end
     else
       respond_to do |format|
-        format.json { render @question.errors, status: 400 }
+        format.json { render @result.errors, status: 400 }
       end
     end
   end
@@ -32,15 +32,17 @@ class ResultsController < ApiController
     end
   end
 
+  def destroy
+    @result = Result.find(params[:id])
+    if @result.destroy
+      render json: @result.errors, status: 202
+    end
+  end
+
   private
 
   def result_params
     params.permit(:initial_feeling, :final_feeling, :final_score, :survey_id, :color)
-  end
-
-  def destroy
-    @result = result.find(params[:id])
-    @result.destroy
   end
 
 end
