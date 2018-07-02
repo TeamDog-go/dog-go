@@ -5,8 +5,5 @@ json.survey do
   json.answers @survey.questions do |question|
     json.merge! question.answers
   end
-  json.feedbacks @survey.answers do |answer|
-    json.merge! answer.feedback
-  end
   json.result @survey.result
 end
