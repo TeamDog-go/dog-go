@@ -7,12 +7,13 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  survey_id  :integer
+#  source     :string
 #
 
 class Question < ApplicationRecord
   has_many :answers
   has_many :options
-  belongs_to :survey
+  belongs_to :survey, optional: true
 
   validates :content, presence: true
 end
