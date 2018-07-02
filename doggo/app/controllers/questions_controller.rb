@@ -38,6 +38,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.permit(:content, :survey_id, :source)
+    params.require(:questions_attributes).permit(:content, :survey_id, :source, answers_attributes: [:id, :a_content, :a_color, :points])
   end
 end
