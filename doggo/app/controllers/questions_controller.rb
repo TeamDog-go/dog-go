@@ -38,6 +38,6 @@ class QuestionsController < ApiController
   private
 
   def question_params
-    params.permit(:content, :survey_id)
+    params.permit(:content, :survey_id, :source)
   end
 end
