@@ -5,5 +5,7 @@ json.survey do
   json.color @survey.color
   json.initial_feeling @survey.initial_feeling
   json.final_feeling @survey.final_feeling
-  json.answers @survey.answers.option
+  json.answers @survey.answers do |answer|
+    json.option_id answer.option_id
+  end
 end
