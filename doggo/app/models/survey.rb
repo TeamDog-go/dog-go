@@ -15,4 +15,5 @@ class Survey < ApplicationRecord
   has_many :answers, :through=> :questions
   has_many :feedbacks, :through=> :answers
   accepts_nested_attributes_for :answers, :questions, :allow_destroy => true
+  accepts_nested_attributes_for :result, :allow_destroy => true
 end
