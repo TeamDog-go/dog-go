@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :surveys
   resources :feedbacks
   resources :options
+  resources :question_sets
 end
