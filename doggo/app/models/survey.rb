@@ -10,10 +10,10 @@
 
 class Survey < ApplicationRecord
   belongs_to :user
-  has_many :answers :through=> :options
+  has_many :answers, :through=> :options
   belongs_to :question_set
   accepts_nested_attributes_for :answers, :allow_destroy => true
-
+end
 
 
 
@@ -26,4 +26,3 @@ class Survey < ApplicationRecord
   # has_many :feedbacks, :through=> :answers
   # accepts_nested_attributes_for :answers, :questions, :allow_destroy => true
   # accepts_nested_attributes_for :result, :allow_destroy => true
-end

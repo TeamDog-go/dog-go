@@ -1,5 +1,4 @@
-class Question_Set < ApplicationRecord
+class QuestionSet < ApplicationRecord
     has_many :surveys
     has_many :questions
-  end
-  
+end
