@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 2018_07_03_210342) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "question_id"
     t.integer "final_score"
     t.string "color"
     t.integer "initial_feeling"

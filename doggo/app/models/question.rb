@@ -12,6 +12,6 @@
 
 class Question < ApplicationRecord
   has_many :options
-  belongs_to :question_set, optional: true
+  belongs_to :category, optional: true
   validates :content, presence: true
 end

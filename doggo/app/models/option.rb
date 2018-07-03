@@ -12,7 +12,7 @@
 #
 
 class Option < ApplicationRecord
-    belongs_to :question
+    belongs_to :category
     has_many :answers
     has_many :surveys
 end

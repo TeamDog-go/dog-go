@@ -11,7 +11,7 @@
 class Survey < ApplicationRecord
   belongs_to :user
   has_many :answers, :through=> :options
-  belongs_to :question_set
+  belongs_to :category
   accepts_nested_attributes_for :answers, :allow_destroy => true
 end
 
