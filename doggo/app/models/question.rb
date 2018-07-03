@@ -13,4 +13,5 @@ class Question < ApplicationRecord
   has_many :options
   belongs_to :category, optional: true
   validates :content, presence: true
+  accepts_nested_attributes_for :options, :allow_destroy => true
 end

@@ -37,7 +37,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:source, questions_attributes: [:id, :content])
+    params.require(:category).permit(:source, questions_attributes: [:id, :content, :options_attributes => [:o_content, :o_color, :avail_points, :feedback_text]])
   end
 
 end
