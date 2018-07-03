@@ -37,7 +37,7 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.require(:survey).permit(:user_id, :final_score, :initial_feeling, :final_feeling, :color, :answers_attributes => [:option_id, :survey_id, :option_attributes=>[]])
+    params.require(:survey).permit(:user_id, :final_score, :initial_feeling, :final_feeling, :color, :answers_attributes => [:option_id, :survey_id])
   end
 
 end
