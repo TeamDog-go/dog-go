@@ -10,8 +10,9 @@
 
 class Survey < ApplicationRecord
   belongs_to :user
-  has_many :answers
+  has_many :answers :through=> :options
   belongs_to :question_set
+
 
 
 
