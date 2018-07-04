@@ -2,16 +2,20 @@
 #
 # Table name: surveys
 #
-#  id         :bigint(8)        not null, primary key
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :bigint(8)        not null, primary key
+#  user_id         :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  final_score     :integer
+#  color           :string
+#  initial_feeling :integer
+#  final_feeling   :integer
 #
 
 class Survey < ApplicationRecord
   belongs_to :user
-  has_many :answers, :through=> :options
-  belongs_to :question_set
+  has_many :answers
+  belongs_to :category
   accepts_nested_attributes_for :answers, :allow_destroy => true
 end
 

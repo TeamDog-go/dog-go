@@ -2,16 +2,16 @@
 #
 # Table name: questions
 #
-#  id         :bigint(8)        not null, primary key
-#  content    :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  survey_id  :integer
-#  source     :string
+#  id          :bigint(8)        not null, primary key
+#  content     :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :integer
 #
 
 class Question < ApplicationRecord
   has_many :options
-  belongs_to :question_set, optional: true
+  belongs_to :category, optional: true
   validates :content, presence: true
+  accepts_nested_attributes_for :options, :allow_destroy => true
 end
