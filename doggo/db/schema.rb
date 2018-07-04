@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_02_204114) do
+ActiveRecord::Schema.define(version: 2018_07_03_231051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,12 +30,16 @@ ActiveRecord::Schema.define(version: 2018_07_02_204114) do
   end
 
   create_table "answers", force: :cascade do |t|
-    t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "a_content"
-    t.string "a_color"
-    t.integer "points"
+    t.integer "option_id"
+    t.integer "survey_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "source"
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -53,14 +57,14 @@ ActiveRecord::Schema.define(version: 2018_07_02_204114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "avail_points"
+    t.text "feedback_text"
   end
 
   create_table "questions", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "survey_id"
-    t.string "source"
+    t.integer "category_id"
   end
 
   create_table "results", force: :cascade do |t|
@@ -77,6 +81,11 @@ ActiveRecord::Schema.define(version: 2018_07_02_204114) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "final_score"
+    t.string "color"
+    t.integer "initial_feeling"
+    t.integer "final_feeling"
+    t.integer "category_id"
   end
 
   create_table "users", force: :cascade do |t|
