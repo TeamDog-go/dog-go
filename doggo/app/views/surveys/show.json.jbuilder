@@ -8,6 +8,7 @@ json.survey do
   json.answers @survey.answers do |answer|
     json.option_id answer.option_id
     option = Option.find(answer.option_id)
+    json.option_question_id option.question_id
     json.option_content option.o_content
     json.option_color option.o_color
     json.option_points option.avail_points
