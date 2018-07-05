@@ -1,7 +1,6 @@
 json.options @options do |option|
-  json.id question.id
-  json.content question.content
-  json.source question.source
-  json.answers question.answers
-  json.options question.options
+  json.id option.id
+  json.content option.content
+  json.category option.category_id
+  json.options option.options
 end
