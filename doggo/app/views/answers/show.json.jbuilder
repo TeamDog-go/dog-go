@@ -1,6 +1,5 @@
 json.answers do
   json.id @answer.id
-  json.answer_color @answer.a_color
-  json.answer_content @answer.a_content
-  json.question_id @answer.question_id
+  json.option_id @answer.option_id
+  json.survey_id @answer.survey_id
 end
