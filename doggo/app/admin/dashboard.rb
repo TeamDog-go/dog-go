@@ -1,4 +1,27 @@
+def effectiveness
+  Category.find_by_sql("
+    SELECT source, COUNT(initial_feeling) as initial_feeling, 
+    COUNT(final_feeling) as final_feeling
+    FROM categories LEFT JOIN surveys
+    ON categories.id = surveys.category_id
+    GROUP BY source").pluck(:source, :initial_feeling, :final_feeling) \
+  .map { |e| 
+    {name: e[0], data: {"initial" => e[1], "final" => e[2]}}
+  }
+end
+
 ActiveAdmin.register_page "Dashboard" do
+  controller do
+    before_action :load_data
+
+    def load_data
+
+    end
+
+
+    
+  end
+
 
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
@@ -14,18 +37,17 @@ ActiveAdmin.register_page "Dashboard" do
     #
     columns do
       column do
-        panel "Recent Posts" do
-          ul do
-            Survey.all.map do |survey|
-              survey.id
-            end
-          end
+        panel "App Usage" do
+          line_chart Survey.group_by_day(:created_at).count
+        end
+        panel "Categories" do
+          column_chart effectiveness
         end
       end
 
       column do
-        panel "Info" do
-          para "Welcome to ActiveAdmin."
+        panel "Categories by Source" do
+          pie_chart Category.group(:source).count
         end
       end
     end
