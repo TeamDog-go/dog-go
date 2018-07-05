@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :surveys
   resources :feedbacks
   resources :options
-  resources :categories
+  resources :categories 
+  resources :timestamps
 end
