@@ -19,6 +19,8 @@ gem 'annotate'
 gem 'jbuilder'
 gem 'rack-cors', require: 'rack/cors'
 gem 'activeadmin'
+gem 'chartkick'
+gem 'groupdate'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
