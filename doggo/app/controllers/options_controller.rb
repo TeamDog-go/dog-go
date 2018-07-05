@@ -1,4 +1,4 @@
-class OptionsController < ApplicationController
+class OptionsController < ApiController
     def index
         @options = Option.all
     end
