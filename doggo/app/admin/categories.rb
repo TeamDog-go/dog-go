@@ -2,7 +2,7 @@ ActiveAdmin.register Category do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
- permit_params :source, questions_attributes: [:id, :content], options_attributes: [:id, :o_content, :o_color, :avail_points, :feedback_text]
+ permit_params :source, :question, questions_attributes: [:id, :content], options_attributes: [:id, :o_content, :o_color, :avail_points, :feedback_text]
 
 
 # or
