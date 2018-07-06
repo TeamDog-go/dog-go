@@ -14,21 +14,10 @@ def pie_categories
   Category.find_by_sql("SELECT source, COUNT(surveys.id) as surveys
   FROM categories LEFT JOIN surveys
   ON categories.id = surveys.category_id
-  GROUP BY source")
+  GROUP BY source").pluck(:source, :surveys)
 end
 
 ActiveAdmin.register_page "Dashboard" do
-  controller do
-    before_action :load_data
-
-    def load_data
-
-    end
-
-
-    
-  end
-
 
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
@@ -54,7 +43,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Categories by Source" do
-          pie_chart Category.group(:source).count
+          pie_chart pie_categories
         end
       end
     end
