@@ -10,6 +10,13 @@ def effectiveness
   }
 end
 
+def pie_categories
+  Category.find_by_sql("SELECT source, COUNT(surveys.id) as surveys
+  FROM categories LEFT JOIN surveys
+  ON categories.id = surveys.category_id
+  GROUP BY source")
+end
+
 ActiveAdmin.register_page "Dashboard" do
   controller do
     before_action :load_data
