@@ -11,7 +11,7 @@ def effectiveness
 end
 
 def line_data
- dataset = Category.find_by_sql("SELECT source, COUNT(surveys.id) as surveys, date_trunc('day', surveys.created_at) as day
+ dataset = Category.find_by_sql("SELECT source, COUNT(surveys.id) as surveys, date_trunc('hour', surveys.created_at) as day
  FROM categories LEFT JOIN surveys
  ON categories.id = surveys.category_id
  GROUP BY day, source").pluck(:source, :surveys, :day)
