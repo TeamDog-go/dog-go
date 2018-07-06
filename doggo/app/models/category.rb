@@ -13,5 +13,9 @@ class Category < ApplicationRecord
     has_many :surveys
     has_many :options, :through=> :questions
     accepts_nested_attributes_for :questions, :options, :allow_destroy => true
+
+    def display_name
+        self.source
+    end
 end
 
