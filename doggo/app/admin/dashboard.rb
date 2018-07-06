@@ -10,8 +10,28 @@ def effectiveness
   }
 end
 
+def line_data
+ dataset = Category.find_by_sql("SELECT source, COUNT(surveys.id) as surveys, date_trunc('hour'	, categories.created_at) as day
+ FROM categories LEFT JOIN surveys
+ ON categories.id = surveys.category_id
+ GROUP BY day, source").pluck(:source, :surveys, :day)
+  newdata = {}
+  dataset.each do |datum|
+    name = datum[0]
+    surveys = datum[1]
+    day = datum[2]
+    newdata[name] ||= {}
+    newdata[name][day] = surveys
+  end
+  finaldata = []
+  newdata.each do |k, v|
+    finaldata.push({name: k, data: v})
+  end
+  finaldata
+end
+
 def pie_categories
-  Category.find_by_sql("SELECT source, COUNT(surveys.id) as surveys
+  pie = Category.find_by_sql("SELECT source, COUNT(surveys.id) as surveys
   FROM categories LEFT JOIN surveys
   ON categories.id = surveys.category_id
   GROUP BY source").pluck(:source, :surveys)
@@ -69,8 +89,10 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "App Usage" do
-          line_chart Survey.group_by_day(:created_at).count
+          line_chart line_data
         end
+
+        
         panel "Categories" do
           # column_chart score_difference
           column_chart score_difference_stacked, { stacked: true, xtype: "number" }
