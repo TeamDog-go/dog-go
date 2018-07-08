@@ -10,6 +10,15 @@ def effectiveness
   }
 end
 
+def visit_data 
+  Category.find_by_sql("SELECT o.o_color, COUNT(o.id) as count, (count * 100) /  
+  FROM questions q LEFT JOIN options o
+  ON q.id = o.question_id LEFT JOIN answers a
+  ON o.id = a.option_id
+  WHERE q.content = 'Will they let you vist the dogs?'
+  GROUP BY o.o_color")
+end
+
 def line_data
  dataset = Category.find_by_sql("SELECT source, COUNT(surveys.id) as surveys, date_trunc('hour', surveys.created_at) as day
  FROM categories LEFT JOIN surveys
@@ -72,30 +81,33 @@ def score_difference_stacked
   finaldata
 end 
 
+def avg_final_score 
+  Category.find_by_sql("SELECT c.source, AVG(s.final_score) as avg_final_score
+  FROM categories c LEFT JOIN surveys s
+  ON c.id = s.category_id
+  WHERE s.final_score IS NOT NULL
+  GROUP BY c.source, s.final_score
+  ORDER BY s.final_score DESC").pluck(:source, :avg_final_score)
+end
+
 ActiveAdmin.register_page "Dashboard" do
 
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
-      end
-    end
 
     # Here is an example of a simple dashboard with columns and panels.
     #
     columns do
       column do
-        panel "App Usage" do
-          line_chart line_data
+        panel "Surveys Taken per Hour by Source" do
+          line_chart line_data, xtitle: "Date", ytitle: "Total Surveys Taken"
         end
 
         
-        panel "Categories" do
+        panel "Number of Surveys Reporting a Feeling Change by Source " do
           # column_chart score_difference
-          column_chart score_difference_stacked, { stacked: true, xtype: "number" }
+          column_chart score_difference_stacked, { xtitle: "Change in Final Feeling", ytitle: "Total Surveys Taken", stacked: true, xtype: "number" }
           # column_chart [
           #   {name: "breeder", data: {-1 => 3, 0 => 5, 1 => 2}},
           #   {name: "rescue", data: {-1 => 4, 0 => 4, 1 => 1}}
@@ -104,8 +116,12 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Categories by Source" do
+        panel "Percentage of Surveys Taken by Source" do
           pie_chart pie_categories
+        end
+
+        panel "Average Final Score by Source" do
+          column_chart avg_final_score, xtitle: "Source", ytitle: "Average Final Score"
         end
       end
     end
