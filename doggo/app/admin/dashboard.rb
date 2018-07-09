@@ -1,3 +1,25 @@
+def scatter
+  dataset = Category.find_by_sql("SELECT c.source, COUNT(s.id) as frequency, s.final_feeling - s.initial_feeling as diff, AVG(s.final_score) as avg_final_score
+  FROM categories c LEFT JOIN surveys s
+  ON c.id = s.category_id
+  WHERE s.final_feeling IS NOT NULL AND s.initial_feeling IS NOT NULL
+  GROUP BY c.source, diff
+  ORDER BY diff").pluck(:source, :diff, :avg_final_score)
+  newdata = {}
+  dataset.each do |datum|
+    name = datum[0]
+    score = datum[2]
+    diff = datum[1]
+    newdata[name] ||= {}
+    newdata[name][diff] = score
+  end
+  finaldata = []
+  newdata.each do |k, v|
+    finaldata.push({name: k, data: v})
+  end
+  finaldata
+end
+
 def effectiveness
   Category.find_by_sql("
     SELECT source, COUNT(initial_feeling) as initial_feeling, 
@@ -121,7 +143,8 @@ ActiveAdmin.register_page "Dashboard" do
         end
 
         panel "Average Final Score by Source" do
-          column_chart avg_final_score, xtitle: "Source", ytitle: "Average Final Score"
+          # column_chart avg_final_score, xtitle: "Source", ytitle: "Average Final Score"
+          scatter_chart scatter, xtitle: "Average Score", ytitle: "Change in Feeling About Source"
         end
       end
     end
