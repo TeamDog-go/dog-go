@@ -122,7 +122,7 @@ ActiveAdmin.register_page "Dashboard" do
     #
     columns do
       column do
-        panel "Surveys Taken per Hour by Source" do
+        panel "Surveys Taken per Day by Source" do
           line_chart line_data, xtitle: "Date", ytitle: "Total Surveys Taken"
         end
 
@@ -142,7 +142,7 @@ ActiveAdmin.register_page "Dashboard" do
           pie_chart pie_categories
         end
 
-        panel "Average Final Score by Source" do
+        panel "Average Final Score vs. Change in Feeling by Source" do
           # column_chart avg_final_score, xtitle: "Source", ytitle: "Average Final Score"
           scatter_chart scatter, xtitle: "Average Score", ytitle: "Change in Feeling About Source"
         end
