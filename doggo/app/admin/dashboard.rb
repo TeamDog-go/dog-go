@@ -1,23 +1,39 @@
-def scatter
-  dataset = Category.find_by_sql("SELECT c.source, COUNT(s.id) as frequency, s.final_feeling - s.initial_feeling as diff, AVG(s.final_score) as avg_final_score
-  FROM categories c LEFT JOIN surveys s
+# def scatter
+#   dataset = Category.find_by_sql("SELECT c.source, COUNT(s.id) as frequency, s.final_feeling - s.initial_feeling as diff, AVG(s.final_score) as avg_final_score
+#   FROM categories c LEFT JOIN surveys s
+#   ON c.id = s.category_id
+#   WHERE s.final_feeling IS NOT NULL AND s.initial_feeling IS NOT NULL
+#   GROUP BY c.source, diff
+#   ORDER BY diff").pluck(:source, :diff, :avg_final_score)
+#   newdata = {}
+#   dataset.each do |datum|
+#     name = datum[0]
+#     score = datum[2]
+#     diff = datum[1]
+#     newdata[name] ||= {}
+#     newdata[name][diff] = score
+#   end
+#   finaldata = []
+#   newdata.each do |k, v|
+#     finaldata.push({name: k, data: v})
+#   end
+#   finaldata
+# end
+
+def results 
+  Category.find_by_sql("SELECT c.source, s.color, COUNT(s.id) as count,
+  CASE
+    WHEN s.color = 'red' THEN 'high risk'
+    WHEN s.color = 'yellow' THEN 'medium risk'
+    WHEN s.color = 'green' THEN 'low risk'
+    ELSE 'There are null color values'
+  END
+  FROM categories c 
+  LEFT JOIN surveys s 
   ON c.id = s.category_id
-  WHERE s.final_feeling IS NOT NULL AND s.initial_feeling IS NOT NULL
-  GROUP BY c.source, diff
-  ORDER BY diff").pluck(:source, :diff, :avg_final_score)
-  newdata = {}
-  dataset.each do |datum|
-    name = datum[0]
-    score = datum[2]
-    diff = datum[1]
-    newdata[name] ||= {}
-    newdata[name][diff] = score
-  end
-  finaldata = []
-  newdata.each do |k, v|
-    finaldata.push({name: k, data: v})
-  end
-  finaldata
+  WHERE s.color IS NOT NULL
+  GROUP BY c.source, s.color
+  ORDER BY s.color DESC").pluck(:case, :count)
 end
 
 def effectiveness
@@ -144,9 +160,9 @@ ActiveAdmin.register_page "Dashboard" do
           pie_chart pie_categories
         end
 
-        panel "Average Final Score vs. Change in Feeling by Source" do
+        panel "Survey Results by Risk" do
           # column_chart avg_final_score, xtitle: "Source", ytitle: "Average Final Score"
-          scatter_chart scatter, xtitle: "Average Score", ytitle: "Change in Feeling About Source"
+          pie_chart results
         end
       end
     end
