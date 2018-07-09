@@ -45,12 +45,13 @@ def line_data
  dataset = Category.find_by_sql("SELECT source, COUNT(surveys.id) as surveys, date_trunc('day', surveys.created_at) as day
  FROM categories LEFT JOIN surveys
  ON categories.id = surveys.category_id
+ WHERE surveys.created_at IS NOT NULL
  GROUP BY day, source").pluck(:source, :surveys, :day)
   newdata = {}
   dataset.each do |datum|
     name = datum[0]
     surveys = datum[1]
-    day = datum[2]
+    day = datum[2].strftime('%b %d')
     newdata[name] ||= {}
     newdata[name][day] = surveys
   end
@@ -123,7 +124,7 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Surveys Taken per Day by Source" do
-          line_chart line_data, xtitle: "Date", ytitle: "Total Surveys Taken"
+          line_chart line_data, discrete: true, xtitle: "Date", ytitle: "Total Surveys Taken"
         end
 
         
