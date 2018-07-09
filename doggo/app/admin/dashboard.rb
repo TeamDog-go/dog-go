@@ -46,7 +46,8 @@ def line_data
  FROM categories LEFT JOIN surveys
  ON categories.id = surveys.category_id
  WHERE surveys.created_at IS NOT NULL
- GROUP BY day, source").pluck(:source, :surveys, :day)
+ GROUP BY day, source
+ ORDER BY day").pluck(:source, :surveys, :day)
   newdata = {}
   dataset.each do |datum|
     name = datum[0]
