@@ -17,6 +17,10 @@ class Survey < ApplicationRecord
   has_many :answers
   belongs_to :category
   accepts_nested_attributes_for :answers, :allow_destroy => true
+
+  def display_name
+    self.id
+  end
 end
 
 

@@ -2,7 +2,10 @@ ActiveAdmin.register Survey do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-# permit_params :list, :of, :attributes, :on, :model
+permit_params :user_id, :initial_feeling, :final_feeling, :final_score, :color, :category_id, :answer,
+    categories_attributes: [:source], answers_attributes:[:option_id, :survey_id]
+
+
 #
 # or
 #
