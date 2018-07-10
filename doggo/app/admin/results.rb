@@ -54,19 +54,19 @@ ActiveAdmin.register_page "Result" do
   content do
     columns do
       column do
-        panel "Shelter Results" do
+        panel "Shelter Results by Risk" do
           pie_chart shelter, donut: true
         end
       end
       column do
-        panel "Breeder Results" do
+        panel "Breeder Results by Risk" do
           pie_chart breeder, donut: true
         end
       end
     end
     columns do
       column do
-        panel "Individual Results" do
+        panel "Individual Results by Risk" do
           pie_chart individual, donut: true
         end
       end
