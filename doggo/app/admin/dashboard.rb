@@ -21,7 +21,7 @@
 # end
 
 def results 
-  Category.find_by_sql("SELECT c.source, s.color, COUNT(s.id) as count,
+  Category.find_by_sql("SELECT s.color, COUNT(s.id) as count,
   CASE
     WHEN s.color = 'red' THEN 'high risk'
     WHEN s.color = 'yellow' THEN 'medium risk'
@@ -32,7 +32,7 @@ def results
   LEFT JOIN surveys s 
   ON c.id = s.category_id
   WHERE s.color IS NOT NULL
-  GROUP BY c.source, s.color
+  GROUP BY s.color
   ORDER BY s.color DESC").pluck(:case, :count)
 end
 
@@ -157,7 +157,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Percentage of Surveys Taken by Source" do
-          pie_chart pie_categories
+          pie_chart pie_categories, donut: true
         end
 
         panel "Survey Results by Risk" do
