@@ -3,7 +3,7 @@ menu priority: 3
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :username, :password, :admin, :api_token
+permit_params :username, :password, :admin, :api_token, :email
 #
 # or
 #

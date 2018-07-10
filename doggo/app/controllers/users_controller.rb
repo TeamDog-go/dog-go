@@ -16,7 +16,7 @@ class UsersController < ApiController
 
     def show
         @user = User.find(params[:id])
-        if @user
+        if @userq
             render json: @user.to_json, status: 200
         else
             render json: @user.errors, status: 400
@@ -43,6 +43,8 @@ class UsersController < ApiController
     private
 
     def user_params
-        params.permit(:username, :password)
+        params.permit(:username, :password, :email, :admin)
     end
 end
+
+

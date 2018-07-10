@@ -1,20 +1,9 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id              :bigint(8)        not null, primary key
-#  username        :string
-#  password_digest :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  api_token       :string
-#  admin           :boolean          default(FALSE), not null
-#
-
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
     has_many :surveys
-
-    has_secure_password
     has_secure_token :api_token
 
     validates_uniqueness_of :username
@@ -24,9 +13,8 @@ class User < ApplicationRecord
     end
 
     def to_json
-        {username: self.username, 
+        {username: self.username,
         id: self.id,
         admin: self.admin}
     end
-
 end
