@@ -8,6 +8,10 @@ ActiveAdmin.setup do |config|
 
   config.register_javascript 'https://www.google.com/jsapi'
 
+  config.logout_link_method = :delete
+  config.logout_link_path = :logout_path
+  # config.current_user_method = :current_admin_user
+
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
