@@ -1,0 +1,21 @@
+2018-07-10 11:30:00[WARN] user: Spoonflower
+GET /admin/questions
+USE eager loading detected
+  Question => [:category]
+  Add to your finder: :includes => [:category]
+Call stack
+
+2018-07-10 11:30:01[WARN] user: Spoonflower
+GET /admin/options
+USE eager loading detected
+  Option => [:question]
+  Add to your finder: :includes => [:question]
+Call stack
+
+2018-07-10 11:32:05[WARN] user: Spoonflower
+GET /admin/questions
+USE eager loading detected
+  Question => [:category]
+  Add to your finder: :includes => [:category]
+Call stack
+
