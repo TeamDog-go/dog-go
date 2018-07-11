@@ -96,7 +96,7 @@ def score_difference
   # }
   Category.find_by_sql("SELECT s.final_feeling - s.initial_feeling AS diff, COUNT(s.id) as frequency
   FROM surveys s
-  WHERE s.final_feeling IS NOT NULL AND s.initial_feeling IS NOT NULL
+  WHERE s.final_feeling IS NOT NULL
   GROUP BY diff ORDER BY diff").pluck(:diff, :frequency)
 end 
 
