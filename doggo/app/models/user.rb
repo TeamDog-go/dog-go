@@ -6,10 +6,8 @@ class User < ApplicationRecord
     has_many :surveys
     has_secure_token :api_token
 
-    validates_uniqueness_of :username
-
     def to_s
-        username
+        email
     end
 
     def to_json
